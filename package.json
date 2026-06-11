@@ -1,0 +1,90 @@
+{
+  "name": "vector-field-viz",
+  "private": true,
+  "version": "0.1.0",
+  "productName": "Vector Field Lab",
+  "description": "Interactive vector calculus field visualization lab for browser, Windows desktop, and Android.",
+  "author": "zys",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "dev:lan": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "check": "npm run test && npm run lint && npm run build",
+    "preview": "vite preview",
+    "preview:lan": "vite preview --host 0.0.0.0",
+    "share": "node scripts/lan-info.mjs",
+    "share:preview": "node scripts/lan-info.mjs --preview",
+    "tunnel": "node scripts/tunnel.mjs",
+    "tunnel:preview": "node scripts/tunnel.mjs preview",
+    "firewall": "scripts\\firewall.bat",
+    "desktop:dev": "npm run build && electron .",
+    "desktop:pack": "set NODE_OPTIONS=--use-system-ca&& npm run build && electron-builder --win portable --publish never",
+    "desktop:dist": "set NODE_OPTIONS=--use-system-ca&& npm run build && electron-builder --win portable nsis --publish never",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "npm run android:sync && cap open android",
+    "android:debug": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\build-android-debug.ps1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/core": "^8.4.0",
+    "@types/katex": "^0.16.8",
+    "katex": "^0.17.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^42.3.3",
+    "electron-builder": "^26.15.2",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12",
+    "vitest": "^4.1.8"
+  },
+  "build": {
+    "appId": "com.vectorfield.lab",
+    "productName": "Vector Field Lab",
+    "asar": true,
+    "directories": {
+      "output": "release/windows"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-${version}-setup.${ext}"
+    }
+  }
+}

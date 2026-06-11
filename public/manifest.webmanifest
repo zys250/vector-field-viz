@@ -1,0 +1,19 @@
+{
+  "name": "Vector Field Lab",
+  "short_name": "Field Lab",
+  "description": "Interactive 2D vector field and electromagnetism visualizations.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060c17",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
