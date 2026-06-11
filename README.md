@@ -159,12 +159,4 @@ docs/
   release-checklist.md
 ```
 
-## 开源前维护建议
-
-- 确认开源协议；若无特殊限制，建议使用 MIT。
-- 给 `public/` 补正式应用图标后再发布首个 release。
-- GitHub release 中同时提供 Windows portable 包和 Android debug/release APK。
-- 发布前至少运行 `npm run check`，并手动验收首页、Ch3、Ch4、Ch5、Ch6、Ch8、Ch9。
-- 长时间演示建议使用 `balanced` 或 `safe` 档位，平板优先 `safe`。
-
 贡献流程见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布检查表见 [docs/release-checklist.md](docs/release-checklist.md)。
