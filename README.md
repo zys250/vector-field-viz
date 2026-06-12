@@ -170,6 +170,3 @@ docs/
 harmonyos/
   entry/             HarmonyOS Stage/ArkTS 移动端壳工程
 ```
-
-
-贡献流程见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布检查表见 [docs/release-checklist.md](docs/release-checklist.md)。
