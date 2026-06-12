@@ -26,7 +26,9 @@
     "desktop:dist": "set NODE_OPTIONS=--use-system-ca&& npm run build && electron-builder --win portable nsis --publish never",
     "android:sync": "npm run build && cap sync android",
     "android:open": "npm run android:sync && cap open android",
-    "android:debug": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\build-android-debug.ps1"
+    "android:debug": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\build-android-debug.ps1",
+    "harmonyos:sync": "npm run build && node scripts/sync-harmonyos.mjs",
+    "harmonyos:open": "explorer harmonyos"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.0",

@@ -1,0 +1,9 @@
+{
+  "name": "entry",
+  "version": "0.1.0",
+  "description": "Entry module for Vector Field Lab HarmonyOS app.",
+  "main": "",
+  "author": "zys",
+  "license": "",
+  "dependencies": {}
+}

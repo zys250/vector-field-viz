@@ -25,6 +25,18 @@ android/local.properties
 *.jks
 *.keystore
 
+# HarmonyOS generated web payload and build artifacts
+harmonyos/entry/src/main/resources/rawfile/web/*
+!harmonyos/entry/src/main/resources/rawfile/web/.gitkeep
+harmonyos/build/
+harmonyos/**/build/
+harmonyos/oh_modules/
+harmonyos/**/oh_modules/
+harmonyos/.hvigor/
+harmonyos/local.properties
+*.hap
+*.hsp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

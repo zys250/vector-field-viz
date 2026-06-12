@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "Vector Field Lab"
+    },
+    {
+      "name": "module_desc",
+      "value": "Vector Field Lab HarmonyOS module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Vector Field Lab"
+    }
+  ]
+}

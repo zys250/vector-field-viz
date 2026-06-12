@@ -1,0 +1,10 @@
+{
+  "modelVersion": "5.0.0",
+  "name": "vector-field-lab-harmonyos",
+  "version": "0.1.0",
+  "description": "HarmonyOS shell for Vector Field Lab.",
+  "main": "",
+  "author": "zys",
+  "license": "",
+  "dependencies": {}
+}

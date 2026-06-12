@@ -2,7 +2,7 @@
 
 Vector Field Lab 是一个面向向量分析、流体直觉和电磁学直觉的交互式可视化实验室。项目使用 React、Vite、Zustand 与 Canvas 2D，把向量场、线积分、微分算子、流体和物理场放到同一套坐标、数值计算与交互语言里。
 
-当前目标是：在普通浏览器、Windows 桌面应用和 Android 平板上都能稳定运行，适合课堂演示、自学复盘和后续开源分享。
+当前目标是：在普通浏览器、Windows 桌面应用、Android 平板和 HarmonyOS 设备上都能稳定运行，适合课堂演示、自学复盘和后续开源分享。
 
 ## 实验内容
 
@@ -61,7 +61,20 @@ Android 调试包：
 npm run android:debug
 ```
 
-gpt还写了几个挡位上去，不过就只是帧率有些区别
+HarmonyOS 工程资源同步：
+
+```bash
+npm run harmonyos:sync
+npm run harmonyos:open
+```
+
+同步后用 DevEco Studio 打开 `harmonyos/`，配置 HarmonyOS SDK 和签名后构建 HAP。说明见 [docs/harmonyos-packaging.md](docs/harmonyos-packaging.md)。
+
+当前项目也保留 PWA/service worker 作为浏览器增强能力，但主交付建议优先使用 Windows 可执行文件、Android APK 或 HarmonyOS HAP。应用内的网络/离线缓存状态不会常驻画布，只在“运行设置”面板的诊断区显示。
+
+## 运行质量档位
+
+运行设置面板提供统一质量档位：
 
 | 档位 | 帧率目标 | 粒子 | 场线 | 热图网格 | 建议场景 |
 | --- | ---: | ---: | ---: | ---: | --- |
@@ -151,8 +164,19 @@ scripts/
   validate_models.py 外部数值验证
 docs/
   local-app-packaging.md
+  harmonyos-packaging.md
   vector-calculus-geometry.md
   release-checklist.md
+harmonyos/
+  entry/             HarmonyOS Stage/ArkTS 移动端壳工程
 ```
+
+## 开源前维护建议
+
+- 确认开源协议；若无特殊限制，建议使用 MIT。
+- 给 `public/` 和 HarmonyOS 工程补正式应用图标后再发布首个 release。
+- GitHub release 中同时提供 Windows portable 包、Android debug/release APK；HarmonyOS HAP 需要在 DevEco Studio 中配置签名后生成。
+- 发布前至少运行 `npm run check`，并手动验收首页、Ch3、Ch4、Ch5、Ch6、Ch8、Ch9。
+- 长时间演示建议使用 `balanced` 或 `safe` 档位，平板优先 `safe`。
 
 贡献流程见 [CONTRIBUTING.md](CONTRIBUTING.md)，发布检查表见 [docs/release-checklist.md](docs/release-checklist.md)。

@@ -23,11 +23,20 @@
 - [ ] 安装 `android/app/build/outputs/apk/debug/app-debug.apk` 到真机或模拟器。
 - [ ] 验证触控拖拽、横竖屏、返回键和长时间运行发热情况。
 
+## HarmonyOS 包
+
+- [ ] 运行 `npm run harmonyos:sync`。
+- [ ] 用 DevEco Studio 打开 `harmonyos/`。
+- [ ] 配置 HarmonyOS SDK 和调试/发布签名。
+- [ ] 在 phone/tablet 真机或模拟器运行 entry 模块。
+- [ ] 验证首页、Ch4 高斯解释、Ch5 剪切流桨轮、运行设置面板和 `safe` 档稳定性。
+
 ## GitHub Release
 
 - [ ] 更新版本号和变更摘要。
 - [ ] 上传 Windows portable 包。
 - [ ] 上传 Android APK。
+- [ ] 若面向鸿蒙设备分发，上传签名后的 HarmonyOS HAP 或给出 DevEco 构建说明。
 - [ ] 说明推荐运行档位：桌面 `balanced/high`，平板 `safe`。
 - [ ] 若公开源码，确认 LICENSE 已添加并符合项目预期。
 
