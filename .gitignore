@@ -37,6 +37,9 @@ harmonyos/local.properties
 *.hap
 *.hsp
 
+# Generated documentation (docx, pdf, screenshots)
+docs/generated/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
