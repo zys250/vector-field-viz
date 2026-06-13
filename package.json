@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "productName": "Vector Field Lab",
   "description": "Interactive vector calculus field visualization lab for browser, Windows desktop, and Android.",
-  "author": "zys",
+  "author": "zys250",
   "type": "module",
   "main": "electron/main.cjs",
   "scripts": {
